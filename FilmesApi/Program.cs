@@ -1,5 +1,4 @@
 using FilmesApi.Data;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -10,12 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<FilmeContext>(o =>
     o.UseNpgsql(builder.Configuration.GetConnectionString("FilmeConnection"))
 );
-
-
-// var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
-
-// builder.Services.AddDbContext<FilmeContext>(opts =>
-//     opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
