@@ -34,7 +34,7 @@ public class FilmeController : ControllerBase
         Filme filme = _mapper.Map<Filme>(filmeDto);
         _context.Filmes.Add(filme);
         _context.SaveChanges();
-        return CreatedAtAction(nameof(ObterPorId), new { id = filme.Id, filme });
+        return Created(nameof(ObterPorId), new { id = filme.Id, filme });
     }
 
     /// <summary>
